@@ -9,15 +9,18 @@ Run ./ImageToString.py --help to see all arguments.
 So far functionality includes:
 
 Greyscale only (For now)
+
 Circular image
  - Default size is Image size
  - Optional Radius (in pixels)
  - Optional circle center offset (x,y)
  - Variable number of points, Default = 200.
+
 Square Images
  - Default size is image size
  - Optional arguments for square from two points (p1 & p2).
  - Points can also be changed in code (Need to work on this).
+
 Iteration / Loop count.
   - Default = 4000
 

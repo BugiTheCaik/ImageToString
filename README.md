@@ -26,11 +26,18 @@ More points = Better resolution
 More loops = Better color/shade representation.
 The drawback is longer computing times, and unreasonable real life needs.
 
+# Example
+![Milton 500-> 3500 lines](Examples/milton.png?raw=true)
+
+<img src="Examples/line_4000jesus1.png?raw=true" width="350"><img src="Examples/line5000tommyc.png?raw=true" width="350">
+
 # Planned
 
 Color images
 Test and fix square
 Test and fix arguments (I threw it together quickly, it seems unrelaible at the moment).
+Statistics (String required etc)
+Beautify code further
 
 
 # Credit

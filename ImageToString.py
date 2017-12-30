@@ -108,110 +108,108 @@ class ImageToString:
 				 self.radius = min(self.image.shape)/2 - 1
 			self.center = (nrows/2) - self.offsety,(ncols/2) - self.offsetx
 			self.points_on_circumference() 	
-		
 		n = 0
 		for x in range(0,self.iteration):
 			if x % 500 == 0:
 				print(str(x) + " Iterations out of " + str(self.iteration))
 			n = self.NextLine(n)
-		
 		#self.Statistics() # Not working atm.
-
 		self.Save()
 
 if __name__ == '__main__':
 	parser = argparse.ArgumentParser(description="Generate continous string images!")
 	
 	parser.add_argument(
-						'-i',
-						'--input',
-						dest='input_file',
-						help='input file name'						
-						)
+			'-i',
+			'--input',
+			dest='input_file',
+			help='input file name'						
+			)
 	
 	parser.add_argument(
-						'-l',
-						'--loops',
-						default=4000,
-						type=int,
-						dest='nloop',
-						help='Amount of loops/windings around points'
-						)
-	parser.add_argument(
-						'-p',
-						'--points',
-						default=200,
-						type=int,
-						dest='npoints',
-						help='Amount of points in circular image'
-						)
+			'-l',
+			'--loops',
+			default=4000,
+			type=int,
+			dest='nloop',
+			help='Amount of loops/windings around points'
+			)
 	
 	parser.add_argument(
-						'-r',
-						'--radius',
-						default=0,
-						type=int,
-						dest='radius',
-						help='optional radius of circular edge, defaults to image size.'
-						)
+			'-p',
+			'--points',
+			default=200,
+			type=int,
+			dest='npoints',
+			help='Amount of points in circular image'
+			)
 	
 	parser.add_argument(
-						'-x',
-						'--offsetx',
-						default=0,
-						type=int,
-						dest='offsetx',
-						help='Offset circle center in the 1st axis.' #Explain further +/-.
-						)
+			'-r',
+			'--radius',
+			default=0,
+			type=int,
+			dest='radius',
+			help='optional radius of circular edge, defaults to image size.'
+			)
 	
 	parser.add_argument(
-						'-y',
-						'--offsety',
-						default=0,
-						type=int,
-						dest='offsety',
-						help='Offset cricle center in the 2nd axis.' #Expalin further +/-
-						)
+			'-x',
+			'--offsetx',
+			default=0,
+			type=int,
+			dest='offsetx',
+			help='Offset circle center in the 1st axis.' #Explain further +/-.
+			)
 	
 	parser.add_argument(
-						'-s',
-						'--square',
-						default=False,
-						type=bool,
-						dest='square',
-						help='Boolean, Use square shape as image outline rather than default circle.'
-						)
+			'-y',
+			'--offsety',
+			default=0,
+			type=int,
+			dest='offsety',
+			help='Offset cricle center in the 2nd axis.' #Expalin further +/-
+			)
 	
 	parser.add_argument(
-						'-p1',
-						'--squarep1',
-						default=(0,0),
-						type=tuple,
-						dest='sqp1',
-						help='Tuple, Define upper-left corner of square edge. Defaults to (0,0).'
-						)
+			'-s',
+			'--square',
+			default=False,
+			type=bool,
+			dest='square',
+			help='Boolean, Use square shape as image outline rather than default circle.'
+			)
 	
 	parser.add_argument(
-						'-p2',
-						'--squarep2',
-						default=True,
-						type=tuple,
-						dest='sqp2',
-						help='Tuple, Define lower-right corner of square edge. Defaults to image size.'
-						)
+			'-p1',
+			'--squarep1',
+			default=(0,0),
+			type=tuple,
+			dest='sqp1',
+			help='Tuple, Define upper-left corner of square edge. Defaults to (0,0).'
+			)
+	
+	parser.add_argument(
+			'-p2',
+			'--squarep2',
+			default=True,
+			type=tuple,
+			dest='sqp2',
+			help='Tuple, Define lower-right corner of square edge. Defaults to image size.'
+			)
 	
 	args = parser.parse_args()
 	print(args)
 	
 	ImageToStringObj = ImageToString(
-									args.input_file,
-									args.nloop,
-									args.npoints,
-									args.radius,
-									args.offsetx, 
-									args.offsety,
-									args.square, 
-									args.sqp1,
-									args.sqp2
-									)
+					args.input_file,
+					args.nloop,
+					args.npoints,
+					args.radius,
+					args.offsetx, 
+					args.offsety,
+					args.square, 
+					args.sqp1,
+					args.sqp2
+					)
 	ImageToStringObj.run()

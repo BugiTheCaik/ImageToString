@@ -45,10 +45,10 @@ class ImageToString:
 			self.sqp2 = (self.image.shape[0] - 1, self.image.shape[1] - 1) # im.shape - (1,1) returns lowest right corner pixel. Is there a easier way?
 		width = self.sqp2[0] - self.sqp1[0]
 		height = self.sqp2[1] - self.sqp1[1]
-		for x in range(0,height,inc): # Manually change inc for x/y if you need more points along one axis.
+		for x in range(0,width,inc): # Manually change inc for x/y if you need more points along one axis.
 			self.points.append((x+self.sqp1[0],self.sqp1[1]))
 			self.points.append((x+self.sqp1[0],self.sqp2[1]))
-		for y in range(0,width,inc):
+		for y in range(0,height,inc):
 			self.points.append((self.sqp1[0],y+self.sqp1[1]))
 			self.points.append((self.sqp2[0],y+self.sqp1[1]))
 	

@@ -2,46 +2,19 @@
 An simple algorithm given any image generates a sequence of points that a string woven around the points gives a close approximation of the original image in real life.
 
 # Usage
-The code runs through commandline using argparse, and requires the images to remain in the same directory as the file.
+The program is a simple python script. All information is inside the file.
 
-Run ./ImageToString.py --help to see all arguments.
+To get started ensure you have Numpy and Python sci-kit image (Skimage) installed.
+Then enter the path to your desired image in the variable ImagePath and run the file.
 
-So far functionality includes:
+I suggest you tinker around with the configuration, as better results can often be achieved.
 
-Greyscale only (For now)
-
-Circular image
- - Default size is Image size
- - Optional Radius (in pixels)
- - Optional circle center offset (x,y)
- - Variable number of points, Default = 200.
-
-Square Images
- - Default size is image size
- - Optional arguments for square from two points (p1 & p2).
- - Points can also be changed in code (Need to work on this).
-
-Iteration / Loop count.
-  - Default = 4000
-
-For best results, fiddle around with iteration and point values. 
-More points = Better resolution
-More loops = Better color/shade representation.
-The drawback is longer computing times, and unreasonable real life needs.
+I had previously made a far too complicated script that barely worked. This is one far simpler, but if there are any additional features you'd need, you'll have an easier time making this script suit your needs.
 
 # Example
 ![Milton 500-> 3500 lines](Examples/milton.png?raw=true)
 
 <img src="Examples/line_4000jesus1.png?raw=true" width="350"><img src="Examples/line5000tommyc.png?raw=true" width="350">
-
-# Planned
-
-Color images
-Test and fix square
-Test and fix arguments (I threw it together quickly, it seems unrelaible at the moment).
-Statistics (String required etc)
-Beautify code further
-
 
 # Credit
 
